@@ -34,9 +34,15 @@ class QuizBrain {
   void nextQuestion() {
     if (_questionNumber < _questionBank.length - 1) {
       _questionNumber++;
-    } else {
-      _questionNumber = 0;
     }
+  }
+
+  bool isQuizCompleted() {
+    return _questionNumber == _questionBank.length - 1;
+  }
+
+  void resetQuestions() {
+    _questionNumber = 0;
   }
 
   String getQuestionText() {
